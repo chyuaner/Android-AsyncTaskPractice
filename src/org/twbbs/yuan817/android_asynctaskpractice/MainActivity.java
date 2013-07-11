@@ -32,9 +32,6 @@ public class MainActivity extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		/*toDoNow();
-		toDoNow();
-		toDoNow();
-		toDoNow();
 		mTextView.setText(String.valueOf(number));*/
 
 		new Calculator().execute();
