@@ -14,7 +14,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	
 	private Button mGoView;
 	private TextView mTextView;
-	private long number = 1;
+	private int number = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,9 @@ public class MainActivity extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		/*toDoNow();
+		toDoNow();
+		toDoNow();
+		toDoNow();
 		mTextView.setText(String.valueOf(number));*/
 
 		new Calculator().execute();
@@ -48,11 +51,11 @@ public class MainActivity extends Activity implements OnClickListener{
 		
 		@Override
 		protected Long doInBackground(Void... params) {
-			toDoNow();
-			toDoNow();
-			toDoNow();
-			toDoNow();
-			toDoNow();
+			for(int i=0;i<3;i++)
+			{
+				toDoNow();
+				publishProgress(number);
+			}			
 			return null;
 		}
 		
@@ -67,7 +70,7 @@ public class MainActivity extends Activity implements OnClickListener{
 			mTextView.setText("P: "+progress[0]);
 			Toast.makeText(getBaseContext(), "...", Toast.LENGTH_SHORT).show();
 			
-			//super.onProgressUpdate(progress);
+			super.onProgressUpdate(progress);
 		}
 		
 		@Override
